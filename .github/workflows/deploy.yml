@@ -23,5 +23,6 @@ jobs:
           project_id: ${{ secrets.GCP_PROJECT }}
 
       - name: Upload to GCS
-        run: gsutil -m rsync -r ./public gs://${{ secrets.BUCKET_NAME }}
+        run: gsutil -m rsync -r -d public gs://${{ vars.GCP_BUCKET_NAME }}
+
 
